@@ -11,7 +11,7 @@ with DAG(
     start_date=pendulum.datetime(2024, 10, 29, tz="Asia/Ho_Chi_Minh"),
     tags=["ssh"]
 ) as dag:
-    ssh_to_pi = NonTemplateSSHOperator(
+    ssh_to_centerm = NonTemplateSSHOperator(
         task_id='ssh_to_centerm_jira_pipeline',
         ssh_conn_id='ssh.centerm.ubuntu.conn',
         cmd_timeout=1200,
