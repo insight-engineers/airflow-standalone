@@ -12,11 +12,11 @@ fi
 
 AIRFLOW_DOCKER_VARIANT=${1:-"core"}
 
-LOCAL_DAGS_PATH=${2:-"dags"}
+LOCAL_DAGS_PATH="$(pwd)/dags"
 DOCKER_DAGS_PATH="/opt/airflow/dags"
 
-DOCKER_IMAGE_REGISTRY=${3:-"insightengineers/airflow"}
-DOCKER_IMAGE_PATH=${DOCKER_IMAGE_REGISTRY}:${AIRFLOW_DOCKER_VARIANT}
+DOCKER_IMAGE_REGISTRY="insightengineers/airflow"
+DOCKER_IMAGE_PATH="${DOCKER_IMAGE_REGISTRY}:${AIRFLOW_DOCKER_VARIANT}"
 
 # check docker command
 if ! command -v docker &> /dev/null; then
